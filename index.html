@@ -71,6 +71,113 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hexo的部署和自定义" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2026/03/20/hexo%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89/" class="article-date">
+  <time class="dt-published" datetime="2026-03-20T08:28:37.000Z" itemprop="datePublished">2026-03-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2026/03/20/hexo%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89/">hexo的部署和自定义</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h3 id="hexo的使用"><a href="#hexo的使用" class="headerlink" title="hexo的使用"></a>hexo的使用</h3><h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>1、进入博客部署好的文件夹：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd E:\gy blog</span><br></pre></td></tr></table></figure>
+
+<p>2、启动本地预览服务器</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean   # 清缓存（出问题时用）</span><br><span class="line">hexo g       # 生成静态页面</span><br><span class="line">hexo s       # 本地预览</span><br><span class="line">hexo d       # 部署到GitHub</span><br></pre></td></tr></table></figure>
+
+<h4 id="编辑"><a href="#编辑" class="headerlink" title="编辑"></a>编辑</h4><p>新建文章：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;文章标题&quot;</span><br></pre></td></tr></table></figure>
+
+<p>生成新文章路径：source&#x2F;_posts&#x2F;文章标题.md</p>
+<p>编辑文章：</p>
+<p>markdown</p>
+<hr>
+<p>title: dirsearch使用方法<br>date: 2026-03-19</p>
+<p>发布到网站：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<h4 id="hexo自定义"><a href="#hexo自定义" class="headerlink" title="hexo自定义"></a>hexo自定义</h4><p>1、修改基本信息：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_config.yml</span><br></pre></td></tr></table></figure>
+
+<p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">YAML:</span><br><span class="line">title: 我的博客</span><br><span class="line">subtitle: 一个安全研究员</span><br><span class="line">description: CTF + 渗透测试</span><br><span class="line">author: 你的名字</span><br></pre></td></tr></table></figure>
+
+<p>2、更换主题</p>
+<p>常用主题：</p>
+<p><strong>butterfly（强烈推荐）🔥</strong></p>
+<ul>
+<li>next</li>
+<li>landscape</li>
+</ul>
+<p>安装主题（以 butterfly 为例）:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<p>修改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">YAML:</span><br><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure>
+
+<p>3、修改主题配置：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">themes/butterfly/_config.yml</span><br></pre></td></tr></table></figure>
+
+<p>可以改：</p>
+<ul>
+<li>导航栏</li>
+<li>背景</li>
+<li>动画</li>
+<li>社交链接</li>
+</ul>
+<p>4、添加页面（关于&#x2F;标签）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+
+<p>生成：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source/about/index.md</span><br></pre></td></tr></table></figure>
+
+<p>5、插入图片</p>
+<p>把图片放：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source/images/</span><br></pre></td></tr></table></figure>
+
+<p>文章中写：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">![图片](../images/test.png)</span><br></pre></td></tr></table></figure>
+
+<h4 id="部署上线"><a href="#部署上线" class="headerlink" title="部署上线"></a>部署上线</h4><p>1️⃣ 配置部署</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/3000gan-yu/3000gan-yu.github.io.git</span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+
+<p>2️⃣ 发布</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+<p>3️⃣ 访问网站</p>
+<p>👉 <a target="_blank" rel="noopener" href="https://3000gan-yu.github.io/">https://3000gan-yu.github.io</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2026/03/20/hexo%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89/" data-id="cuidfxckKiZbtnahrySJWIWef" data-title="hexo的部署和自定义" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-How-use-dirsearch" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2026/03/19/How-use-dirsearch/" class="article-date">
@@ -268,6 +375,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2026/03/20/hexo%E7%9A%84%E9%83%A8%E7%BD%B2%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89/">hexo的部署和自定义</a>
+          </li>
         
           <li>
             <a href="/2026/03/19/How-use-dirsearch/">How use dirsearch</a>
